@@ -1,6 +1,6 @@
 Name:           multistrap
 Version:        2.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        multiple repository bootstrap based on apt
 
 License:        GPLv3
@@ -8,7 +8,7 @@ URL:            http://www.emdebian.org/multistrap/
 Source0:        http://ftp.debian.org/debian/pool/main/m/multistrap/%{name}_%{version}.tar.gz
 
 BuildRequires:  po4a
-Requires:       perl(Config::IniFiles) apt
+Requires:       perl(Config::IniFiles) apt dpkg
 
 %description
 A debootstrap replacement with multiple repository support,
@@ -69,5 +69,8 @@ install -Dpm 0755 cross/setcrossarch.sh %{buildroot}%{_datadir}/%{name}/
 %{_mandir}/*/*/device-table.*
 
 %changelog
+* Wed Nov 26 2014 Igor Gnatenko <ignatenko@mirantis.com> - 2.2.0-2
+- dpkg as requires
+
 * Tue Nov 25 2014 Igor Gnatenko <ignatenko@mirantis.com> - 2.2.0-1
 - Initial package
